@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Registration - Light Academy</title>
+    <meta name="description" content="Contact Light Academy for inquiries or register your child for enrollment.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800;900&family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">LA</div>
+                <div class="logo-text">Light <span>Academy</span></div>
+            </a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="academics.html" class="nav-link">Academics</a></li>
+                    <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="hero" style="min-height: 400px;">
+        <div class="hero-content" style="padding: 60px 24px;">
+            <div class="hero-text" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h1>Contact & Registration</h1>
+                <p>Get in touch with us or register your child for enrollment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p style="color: var(--on-surface-variant); margin-bottom: 32px;">Have questions? We'd love to hear from you. Reach out to us using the information below or fill out the form.</p>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <span class="material-symbols-outlined">location_on</span>
+                        </div>
+                        <div class="info-content">
+                            <h4>Address</h4>
+                            <p>Kigo, Uganda</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <span class="material-symbols-outlined">phone</span>
+                        </div>
+                        <div class="info-content">
+                            <h4>Phone</h4>
+                            <p>+256 123 456 789</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <span class="material-symbols-outlined">email</span>
+                        </div>
+                        <div class="info-content">
+                            <h4>Email</h4>
+                            <p>info@lightacademy.edu</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <span class="material-symbols-outlined">schedule</span>
+                        </div>
+                        <div class="info-content">
+                            <h4>Office Hours</h4>
+                            <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Embedded Map (Optional Enhancement) -->
+                    <div style="margin-top: 32px; border-radius: var(--radius-md); overflow: hidden;">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.814456789012!2d32.5!3d0.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMjQnMDAuMCJOIDMywrAzMCcwMC4wIkU!5e0!3m2!1sen!2sug!4v1600000000000!5m2!1sen!2sug" 
+                            width="100%" 
+                            height="200" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+                
+                <!-- Registration Form -->
+                <div class="form-container">
+                    <h3>Student Registration</h3>
+                    <p class="form-subtitle">Fill out the form below to register your child for enrollment.</p>
+                    
+                    <form id="contactForm">
+                        <!-- Personal Information -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="firstName">First Name <span class="required">*</span></label>
+                                <input type="text" id="firstName" name="firstName" class="form-input" placeholder="Enter first name" required>
+                                <span class="form-error">First name must be at least 2 characters</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="lastName">Last Name <span class="required">*</span></label>
+                                <input type="text" id="lastName" name="lastName" class="form-input" placeholder="Enter last name" required>
+                                <span class="form-error">Last name must be at least 2 characters</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="Enter email address" required>
+                                <span class="form-error">Please enter a valid email address</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="phone">Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="Enter phone number" required>
+                                <span class="form-error">Please enter a valid phone number</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Student Information -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="studentName">Student's Name <span class="required">*</span></label>
+                                <input type="text" id="studentName" name="studentName" class="form-input" placeholder="Enter student's full name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="grade">Grade/Class <span class="required">*</span></label>
+                                <select id="grade" name="grade" class="form-select" required>
+                                    <option value="">Select grade</option>
+                                    <option value="s1">Senior 1 (Primary 7)</option>
+                                    <option value="s2">Senior 2</option>
+                                    <option value="s3">Senior 3 (UCE)</option>
+                                    <option value="s4">Senior 4</option>
+                                    <option value="s5">Senior 5 (UACE)</option>
+                                    <option value="s6">Senior 6</option>
+                                </select>
+                                <span class="form-error">Please select a grade</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="dob">Date of Birth</label>
+                                <input type="date" id="dob" name="dob" class="form-input">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="gender">Gender</label>
+                                <select id="gender" name="gender" class="form-select">
+                                    <option value="">Select gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Previous School -->
+                        <div class="form-group">
+                            <label class="form-label" for="previousSchool">Previous School (if any)</label>
+                            <input type="text" id="previousSchool" name="previousSchool" class="form-input" placeholder="Enter previous school name">
+                        </div>
+                        
+                        <!-- Message -->
+                        <div class="form-group">
+                            <label class="form-label" for="message">Additional Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your child or any specific requirements..." required></textarea>
+                            <span class="form-error">Message must be at least 10 characters</span>
+                        </div>
+                        
+                        <!-- Terms Checkbox -->
+                        <div class="form-group">
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms">I agree to the <a href="#" style="color: var(--secondary);">terms and conditions</a> and privacy policy. I understand that submitting this form does not guarantee admission.</label>
+                            </div>
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary form-submit">Submit Registration</button>
+                        
+                        <!-- Success Message -->
+                        <div class="form-success">
+                            <span class="material-symbols-outlined" style="font-size: 48px; color: #28a745; display: block; margin-bottom: 16px;">check_circle</span>
+                            <h4 style="color: #28a745; margin-bottom: 8px;">Registration Submitted Successfully!</h4>
+                            <p style="margin: 0;">Thank you for registering. We will contact you within 2-3 business days.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about enrollment and our school.</p>
+            </div>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>What is the admission process?</h3>
+                    <p>Submit the registration form, attend an interview, and provide previous academic records. Our admissions team will contact you within 3 business days.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>What are the school fees?</h3>
+                    <p>School fees vary by grade. Please contact our office for detailed fee structures and payment plans available.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Do you offer boarding?</h3>
+                    <p>Yes, we offer both day and boarding options. Boarding facilities are available for students from Senior 1 and above.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>What extracurricular activities do you offer?</h3>
+                    <p>We offer sports, music, drama, art, debate club, science club, and community service programs.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>What are the school hours?</h3>
+                    <p>School runs from 8:00 AM to 5:00 PM on weekdays. Boarding students have evening study sessions and activities.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>How can I schedule a campus visit?</h3>
+                    <p>Use the contact form above or call our office directly to schedule a personalized tour of our campus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon">LA</div>
+                    <div class="logo-text">Light <span>Academy</span></div>
+                </div>
+                <p>Empowering students to achieve excellence in education and character since 2010.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <span class="material-symbols-outlined">facebook</span>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <span class="material-symbols-outlined">tag</span>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <span class="material-symbols-outlined">photo_camera</span>
+                    </a>
+                    <a href="#" class="social-link" aria-label="YouTube">
+                        <span class="material-symbols-outlined">play_circle</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="academics.html">Academics</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Academics</h4>
+                <ul class="footer-links">
+                    <li><a href="academics.html">Science</a></li>
+                    <li><a href="academics.html">Arts</a></li>
+                    <li><a href="academics.html">Business</a></li>
+                    <li><a href="academics.html">Sports</a></li>
+                    <li><a href="academics.html">Clubs</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Contact Info</h4>
+                <ul class="footer-links">
+                    <li>Kigo, Uganda</li>
+                    <li>+256 123 456 789</li>
+                    <li>info@lightacademy.edu</li>
+                    <li>Mon-Fri: 8am - 5pm</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Light Academy. All rights reserved. | Designed with care</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Light Academy</title>
+    <meta name="description" content="View photos of Light Academy's campus, events, students, and activities.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800;900&family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">LA</div>
+                <div class="logo-text">Light <span>Academy</span></div>
+            </a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="academics.html" class="nav-link">Academics</a></li>
+                    <li class="nav-item"><a href="gallery.html" class="nav-link active">Gallery</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="hero" style="min-height: 400px;">
+        <div class="hero-content" style="padding: 60px 24px;">
+            <div class="hero-text" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h1>Our Gallery</h1>
+                <p>Explore moments from our campus life, events, and student activities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slideshow Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Moments</h2>
+                <p>Highlights from our school events and activities.</p>
+            </div>
+            
+            <!-- Image Slideshow -->
+            <div class="slideshow-container">
+                <div class="slide active">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=900&h=500&fit=crop" alt="Campus View">
+                    <div class="slide-caption">
+                        <h3>Our Beautiful Campus</h3>
+                        <p>State-of-the-art facilities in a serene learning environment</p>
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=900&h=500&fit=crop" alt="Students Learning">
+                    <div class="slide-caption">
+                        <h3>Interactive Learning</h3>
+                        <p>Students engaged in hands-on educational activities</p>
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?w=900&h=500&fit=crop" alt="Sports Day">
+                    <div class="slide-caption">
+                        <h3>Sports & Athletics</h3>
+                        <p>Annual sports day promoting teamwork and physical fitness</p>
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=900&h=500&fit=crop" alt="Science Lab">
+                    <div class="slide-caption">
+                        <h3>Science & Technology</h3>
+                        <p>Modern laboratories for practical learning</p>
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1544531696-b866c13b111c?w=900&h=500&fit=crop" alt="Music Performance">
+                    <div class="slide-caption">
+                        <h3>Arts & Culture</h3>
+                        <p>Students showcasing their talents in music and drama</p>
+                    </div>
+                </div>
+                
+                <!-- Navigation Buttons -->
+                <button class="slideshow-nav prev" aria-label="Previous slide">&#10094;</button>
+                <button class="slideshow-nav next" aria-label="Next slide">&#10095;</button>
+            </div>
+            
+            <!-- Slideshow Dots -->
+            <div class="slideshow-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+                <span class="dot" data-slide="3"></span>
+                <span class="dot" data-slide="4"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Grid -->
+    <section class="section about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Campus Life</h2>
+                <p>Browse through our collection of photos from daily school life.</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=300&fit=crop" alt="Classroom">
+                    <div class="gallery-overlay">
+                        <h4>Modern Classrooms</h4>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=300&fit=crop" alt="Science Lab">
+                    <div class="gallery-overlay">
+                        <h4>Science Laboratory</h4>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400&h=300&fit=crop" alt="Library">
+                    <div class="gallery-overlay">
+                        <h4>Library</h4>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?w=400&h=300&fit=crop" alt="Sports Field">
+                    <div class="gallery-overlay">
+                        <h4>Sports Facilities</h4>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=400&h=300&fit=crop" alt="Art Class">
+                    <div class="gallery-overlay">
+                        <h4>Art & Design</h4>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&h=300&fit=crop" alt="Computer Lab">
+                    <div class="gallery-overlay">
+                        <h4>Computer Lab</h4>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1544531696-b866c13b111c?w=400&h=300&fit=crop" alt="Music Room">
+                    <div class="gallery-overlay">
+                        <h4>Music Department</h4>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=300&fit=crop" alt="School Assembly">
+                    <div class="gallery-overlay">
+                        <h4>School Assembly</h4>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=400&h=300&fit=crop" alt="Students">
+                    <div class="gallery-overlay">
+                        <h4>Our Students</h4>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop" alt="Group Work">
+                    <div class="gallery-overlay">
+                        <h4>Collaborative Learning</h4>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=300&fit=crop" alt="Graduation">
+                    <div class="gallery-overlay">
+                        <h4>Graduation Ceremony</h4>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1525921429618-f5170869b628?w=400&h=300&fit=crop" alt="School Event">
+                    <div class="gallery-overlay">
+                        <h4>School Events</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Gallery Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Video Gallery</h2>
+                <p>Watch videos from our school events and activities.</p>
+            </div>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=200&fit=crop" alt="School Tour Video" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 16px;">
+                    <h3>Virtual School Tour</h3>
+                    <p>Take a virtual tour of our campus and facilities.</p>
+                    <a href="#" class="card-link">Watch Video →</a>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1544531696-b866c13b111c?w=400&h=200&fit=crop" alt="Music Festival" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 16px;">
+                    <h3>Annual Music Festival</h3>
+                    <p>Highlights from our annual music and drama festival.</p>
+                    <a href="#" class="card-link">Watch Video →</a>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?w=400&h=200&fit=crop" alt="Sports Day" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 16px;">
+                    <h3>Sports Day 2025</h3>
+                    <p>Exciting moments from our annual sports day.</p>
+                    <a href="#" class="card-link">Watch Video →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section about-section">
+        <div class="container" style="text-align: center;">
+            <h2>Visit Our Campus</h2>
+            <p style="max-width: 600px; margin: 16px auto 32px; color: var(--on-surface-variant);">Experience Light Academy in person. Schedule a visit today and see what makes our school special.</p>
+            <a href="contact.html" class="btn btn-primary">Schedule a Visit</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon">LA</div>
+                    <div class="logo-text">Light <span>Academy</span></div>
+                </div>
+                <p>Empowering students to achieve excellence in education and character since 2010.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <span class="material-symbols-outlined">facebook</span>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <span class="material-symbols-outlined">tag</span>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <span class="material-symbols-outlined">photo_camera</span>
+                    </a>
+                    <a href="#" class="social-link" aria-label="YouTube">
+                        <span class="material-symbols-outlined">play_circle</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="academics.html">Academics</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Academics</h4>
+                <ul class="footer-links">
+                    <li><a href="academics.html">Science</a></li>
+                    <li><a href="academics.html">Arts</a></li>
+                    <li><a href="academics.html">Business</a></li>
+                    <li><a href="academics.html">Sports</a></li>
+                    <li><a href="academics.html">Clubs</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Contact Info</h4>
+                <ul class="footer-links">
+                    <li>Kigo, Uganda</li>
+                    <li>+256 123 456 789</li>
+                    <li>info@lightacademy.edu</li>
+                    <li>Mon-Fri: 8am - 5pm</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Light Academy. All rights reserved. | Designed with care</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
