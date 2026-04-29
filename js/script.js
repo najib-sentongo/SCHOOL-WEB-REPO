@@ -1,21 +1,12 @@
-/* ========================================
-   LIGHT ACADEMY - JavaScript Features
-   ======================================== */
-
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
-    
     // Initialize all features
     initMobileMenu();
     initSlideshow();
     initFormValidation();
-    // initScrollAnimations();
-    // initSmoothScroll();
 });
 
-/* ========================================
-   MOBILE MENU TOGGLE
-   ======================================== */
+// MOBILE MENU TOGGLE
 function initMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -62,9 +53,7 @@ function initMobileMenu() {
     }
 }
 
-/* ========================================
-   IMAGE SLIDESHOW (Gallery)
-   ======================================== */
+// IMAGE SLIDESHOW (Gallery)
 function initSlideshow() {
     const slideshow = document.querySelector('.slideshow-container');
     
@@ -152,9 +141,7 @@ function initSlideshow() {
     startSlideshow();
 }
 
-/* ========================================
-   FORM VALIDATION (Contact/Registration)
-   ======================================== */
+// FORM VALIDATION (Contact/Registration)
 function initFormValidation() {
     const form = document.getElementById('contactForm');
     
@@ -302,79 +289,8 @@ function initFormValidation() {
     });
 }
 
-// /* ========================================
-//    SCROLL ANIMATIONS
-//    ======================================== */
-// function initScrollAnimations() {
-//     // Check if Intersection Observer is supported
-//     if (!('IntersectionObserver' in window)) {
-//         // Fallback: show all elements
-//         document.querySelectorAll('.card, .program-card, .gallery-item').forEach(el => {
-//             el.style.opacity = '1';
-//             el.style.transform = 'none';
-//         });
-//         return;
-//     }
-    
-//     // Create observer
-//     const observer = new IntersectionObserver((entries) => {
-//         entries.forEach(entry => {
-//             if (entry.isIntersecting) {
-//                 entry.target.classList.add('animate-in');
-//                 observer.unobserve(entry.target);
-//             }
-//         });
-//     }, {
-//         threshold: 0.1,
-//         rootMargin: '0px 0px -50px 0px'
-//     });
-    
-//     // Observe elements
-//     document.querySelectorAll('.card, .program-card, .gallery-item').forEach(el => {
-//         el.style.opacity = '0';
-//         el.style.transform = 'translateY(30px)';
-//         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-//         observer.observe(el);
-//     });
-    
-//     // Add animation class styles
-//     const style = document.createElement('style');
-//     style.textContent = `
-//         .animate-in {
-//             opacity: 1 !important;
-//             transform: translateY(0) !important;
-//         }
-//     `;
-//     document.head.appendChild(style);
-// }
 
-// /* ========================================
-//    SMOOTH SCROLL FOR ANCHOR LINKS
-//    ======================================== */
-// function initSmoothScroll() {
-//     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-//         anchor.addEventListener('click', function(e) {
-//             const targetId = this.getAttribute('href');
-            
-//             if (targetId === '#') return;
-            
-//             const targetElement = document.querySelector(targetId);
-            
-//             if (targetElement) {
-//                 e.preventDefault();
-//                 targetElement.scrollIntoView({
-//                     behavior: 'smooth',
-//                     block: 'start'
-//                 });
-//             }
-//         });
-//     });
-// }
-
-/* ========================================
-   DYNAMIC CONTENT - Program Cards
-   ======================================== */
-// This function can be used to dynamically load program data
+//  DYNAMIC CONTENT - Program Cards
 function loadPrograms() {
     const programs = [
         {
@@ -425,65 +341,3 @@ function loadPrograms() {
         container.appendChild(card);
     });
 }
-
-// /* ========================================
-//    GALLERY LIGHTBOX (Optional Enhancement)
-//    ======================================== */
-// function initGalleryLightbox() {
-//     const galleryItems = document.querySelectorAll('.gallery-item');
-    
-//     if (galleryItems.length === 0) return;
-    
-//     // Create lightbox element
-//     const lightbox = document.createElement('div');
-//     lightbox.id = 'lightbox';
-//     lightbox.style.cssText = `
-//         position: fixed;
-//         top: 0;
-//         left: 0;
-//         width: 100%;
-//         height: 100%;
-//         background: rgba(0, 0, 0, 0.9);
-//         display: none;
-//         justify-content: center;
-//         align-items: center;
-//         z-index: 9999;
-//         cursor: pointer;
-//     `;
-    
-//     const lightboxImg = document.createElement('img');
-//     lightboxImg.style.cssText = `
-//         max-width: 90%;
-//         max-height: 90%;
-//         border-radius: 8px;
-//     `;
-    
-//     lightbox.appendChild(lightboxImg);
-//     document.body.appendChild(lightbox);
-    
-//     // Add click events
-//     galleryItems.forEach(item => {
-//         item.addEventListener('click', function() {
-//             const img = this.querySelector('img');
-//             if (img) {
-//                 lightboxImg.src = img.src;
-//                 lightbox.style.display = 'flex';
-//             }
-//         });
-//     });
-    
-//     // Close lightbox
-//     lightbox.addEventListener('click', function() {
-//         this.style.display = 'none';
-//     });
-    
-//     // Close on Escape key
-//     document.addEventListener('keydown', function(e) {
-//         if (e.key === 'Escape') {
-//             lightbox.style.display = 'none';
-//         }
-//     });
-// }
-
-// // Initialize lightbox if gallery exists
-// document.addEventListener('DOMContentLoaded', initGalleryLightbox);
