@@ -6,17 +6,17 @@
 :root {
     /* Colors from your UI */
     --primary: #000123;
-    --primary-container: #0a115f;
+    --primary-container: #f79091;
     --primary-fixed: #e0e0ff;
     --on-primary: #ffffff;
     --on-primary-fixed: #070d5d;
     --on-primary-container: #787fcd;
     
-    --secondary: #7945ab;
-    --secondary-container: #ca93ff;
+    --secondary: #f6090c;
+    --secondary-container: #fa9698;
     --secondary-fixed: #f0dbff;
     --on-secondary: #ffffff;
-    --on-secondary-container: #582289;
+    --on-secondary-container: #d1080c;
     
     --tertiary: #130000;
     --tertiary-container: #460000;
@@ -208,7 +208,7 @@ a {
     min-height: 600px;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, var(--primary-container) 0%, var(--primary) 100%);
+    background: linear-gradient(-30deg, var(--on-primary-container) 0%,var(--primary) 30% , var(--primary) 100%);
     overflow: hidden;
 }
 
@@ -337,7 +337,7 @@ a {
    ======================================== */
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 24px;
 }
 

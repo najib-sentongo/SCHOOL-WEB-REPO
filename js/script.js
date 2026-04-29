@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initMobileMenu();
     initSlideshow();
     initFormValidation();
-    initScrollAnimations();
-    initSmoothScroll();
+    // initScrollAnimations();
+    // initSmoothScroll();
 });
 
 /* ========================================
@@ -302,74 +302,74 @@ function initFormValidation() {
     });
 }
 
-/* ========================================
-   SCROLL ANIMATIONS
-   ======================================== */
-function initScrollAnimations() {
-    // Check if Intersection Observer is supported
-    if (!('IntersectionObserver' in window)) {
-        // Fallback: show all elements
-        document.querySelectorAll('.card, .program-card, .gallery-item').forEach(el => {
-            el.style.opacity = '1';
-            el.style.transform = 'none';
-        });
-        return;
-    }
+// /* ========================================
+//    SCROLL ANIMATIONS
+//    ======================================== */
+// function initScrollAnimations() {
+//     // Check if Intersection Observer is supported
+//     if (!('IntersectionObserver' in window)) {
+//         // Fallback: show all elements
+//         document.querySelectorAll('.card, .program-card, .gallery-item').forEach(el => {
+//             el.style.opacity = '1';
+//             el.style.transform = 'none';
+//         });
+//         return;
+//     }
     
-    // Create observer
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
+//     // Create observer
+//     const observer = new IntersectionObserver((entries) => {
+//         entries.forEach(entry => {
+//             if (entry.isIntersecting) {
+//                 entry.target.classList.add('animate-in');
+//                 observer.unobserve(entry.target);
+//             }
+//         });
+//     }, {
+//         threshold: 0.1,
+//         rootMargin: '0px 0px -50px 0px'
+//     });
     
-    // Observe elements
-    document.querySelectorAll('.card, .program-card, .gallery-item').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
+//     // Observe elements
+//     document.querySelectorAll('.card, .program-card, .gallery-item').forEach(el => {
+//         el.style.opacity = '0';
+//         el.style.transform = 'translateY(30px)';
+//         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+//         observer.observe(el);
+//     });
     
-    // Add animation class styles
-    const style = document.createElement('style');
-    style.textContent = `
-        .animate-in {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-    `;
-    document.head.appendChild(style);
-}
+//     // Add animation class styles
+//     const style = document.createElement('style');
+//     style.textContent = `
+//         .animate-in {
+//             opacity: 1 !important;
+//             transform: translateY(0) !important;
+//         }
+//     `;
+//     document.head.appendChild(style);
+// }
 
-/* ========================================
-   SMOOTH SCROLL FOR ANCHOR LINKS
-   ======================================== */
-function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
+// /* ========================================
+//    SMOOTH SCROLL FOR ANCHOR LINKS
+//    ======================================== */
+// function initSmoothScroll() {
+//     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+//         anchor.addEventListener('click', function(e) {
+//             const targetId = this.getAttribute('href');
             
-            if (targetId === '#') return;
+//             if (targetId === '#') return;
             
-            const targetElement = document.querySelector(targetId);
+//             const targetElement = document.querySelector(targetId);
             
-            if (targetElement) {
-                e.preventDefault();
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-}
+//             if (targetElement) {
+//                 e.preventDefault();
+//                 targetElement.scrollIntoView({
+//                     behavior: 'smooth',
+//                     block: 'start'
+//                 });
+//             }
+//         });
+//     });
+// }
 
 /* ========================================
    DYNAMIC CONTENT - Program Cards
@@ -426,64 +426,64 @@ function loadPrograms() {
     });
 }
 
-/* ========================================
-   GALLERY LIGHTBOX (Optional Enhancement)
-   ======================================== */
-function initGalleryLightbox() {
-    const galleryItems = document.querySelectorAll('.gallery-item');
+// /* ========================================
+//    GALLERY LIGHTBOX (Optional Enhancement)
+//    ======================================== */
+// function initGalleryLightbox() {
+//     const galleryItems = document.querySelectorAll('.gallery-item');
     
-    if (galleryItems.length === 0) return;
+//     if (galleryItems.length === 0) return;
     
-    // Create lightbox element
-    const lightbox = document.createElement('div');
-    lightbox.id = 'lightbox';
-    lightbox.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-        cursor: pointer;
-    `;
+//     // Create lightbox element
+//     const lightbox = document.createElement('div');
+//     lightbox.id = 'lightbox';
+//     lightbox.style.cssText = `
+//         position: fixed;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 100%;
+//         background: rgba(0, 0, 0, 0.9);
+//         display: none;
+//         justify-content: center;
+//         align-items: center;
+//         z-index: 9999;
+//         cursor: pointer;
+//     `;
     
-    const lightboxImg = document.createElement('img');
-    lightboxImg.style.cssText = `
-        max-width: 90%;
-        max-height: 90%;
-        border-radius: 8px;
-    `;
+//     const lightboxImg = document.createElement('img');
+//     lightboxImg.style.cssText = `
+//         max-width: 90%;
+//         max-height: 90%;
+//         border-radius: 8px;
+//     `;
     
-    lightbox.appendChild(lightboxImg);
-    document.body.appendChild(lightbox);
+//     lightbox.appendChild(lightboxImg);
+//     document.body.appendChild(lightbox);
     
-    // Add click events
-    galleryItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const img = this.querySelector('img');
-            if (img) {
-                lightboxImg.src = img.src;
-                lightbox.style.display = 'flex';
-            }
-        });
-    });
+//     // Add click events
+//     galleryItems.forEach(item => {
+//         item.addEventListener('click', function() {
+//             const img = this.querySelector('img');
+//             if (img) {
+//                 lightboxImg.src = img.src;
+//                 lightbox.style.display = 'flex';
+//             }
+//         });
+//     });
     
-    // Close lightbox
-    lightbox.addEventListener('click', function() {
-        this.style.display = 'none';
-    });
+//     // Close lightbox
+//     lightbox.addEventListener('click', function() {
+//         this.style.display = 'none';
+//     });
     
-    // Close on Escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            lightbox.style.display = 'none';
-        }
-    });
-}
+//     // Close on Escape key
+//     document.addEventListener('keydown', function(e) {
+//         if (e.key === 'Escape') {
+//             lightbox.style.display = 'none';
+//         }
+//     });
+// }
 
-// Initialize lightbox if gallery exists
-document.addEventListener('DOMContentLoaded', initGalleryLightbox);
+// // Initialize lightbox if gallery exists
+// document.addEventListener('DOMContentLoaded', initGalleryLightbox);
