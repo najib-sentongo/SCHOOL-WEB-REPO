@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initMobileMenu();
     initSlideshow();
     initFormValidation();
+    loadPrograms();
 });
 
 // MOBILE MENU TOGGLE
@@ -56,13 +57,16 @@ function initMobileMenu() {
 // IMAGE SLIDESHOW (Gallery)
 function initSlideshow() {
     const slideshow = document.querySelector('.slideshow-container');
+    const dotscontainer = document.querySelector('.slideshow-dots');
     
     if (!slideshow) return;
     
     const slides = slideshow.querySelectorAll('.slide');
-    const dots = slideshow.querySelectorAll('.dot');
+    const dots = dotscontainer.querySelectorAll('.dot');
     const prevBtn = slideshow.querySelector('.slideshow-nav.prev');
     const nextBtn = slideshow.querySelector('.slideshow-nav.next');
+    console.log('Dots found:', dots.length);
+    console.log('Slides found:', slides.length);
     
     if (slides.length === 0) return;
     
@@ -298,26 +302,26 @@ function loadPrograms() {
             description: 'Comprehensive science curriculum with modern laboratories and technology integration.',
             features: ['Physics, Chemistry, Biology', 'Computer Science', 'Robotics Lab', 'Science Fair'],
             tag: 'Popular',
-            image: 'images/science.jpg'
+            image: '/assets/images/smiles.jpeg'
         },
         {
             title: 'Arts & Humanities',
             description: 'Nurturing creativity and critical thinking through arts and social sciences.',
             features: ['Visual Arts', 'Music & Drama', 'History & Geography', 'Languages'],
             tag: 'Featured',
-            image: 'images/arts.jpg'
+            image: '/assets/images/cultural-dance.jpeg'
         },
         {
             title: 'Business & Commerce',
             description: 'Preparing students for the global business environment with practical skills.',
             features: ['Accounting', 'Economics', 'Business Studies', 'Entrepreneurship'],
             tag: 'New',
-            image: 'images/business.jpg'
+            image: '/assets/images/business.jpg'
         }
     ];
     
     const container = document.getElementById('programsContainer');
-    if (!container) return;
+    if (!container) {console.error('Programs container not found');return;}
     
     programs.forEach((program, index) => {
         const card = document.createElement('div');
@@ -325,8 +329,7 @@ function loadPrograms() {
         card.style.animationDelay = `${index * 0.1}s`;
         
         card.innerHTML = `
-            <img src="${program.image}" alt="${program.title}" class="program-image" 
-                 onerror="this.src='https://via.placeholder.com/400x200?text=${program.title}'">
+            <img src="${program.image}" alt="${program.title}" class="program-image">
             <div class="program-content">
                 <span class="program-tag">${program.tag}</span>
                 <h3>${program.title}</h3>
