@@ -1,21 +1,13 @@
-/* ========================================
-   LIGHT ACADEMY - JavaScript Features
-   ======================================== */
-
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
-    
     // Initialize all features
     initMobileMenu();
     initSlideshow();
     initFormValidation();
-    initScrollAnimations();
-    initSmoothScroll();
+    loadPrograms();
 });
 
-/* ========================================
-   MOBILE MENU TOGGLE
-   ======================================== */
+// MOBILE MENU TOGGLE
 function initMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -62,18 +54,19 @@ function initMobileMenu() {
     }
 }
 
-/* ========================================
-   IMAGE SLIDESHOW (Gallery)
-   ======================================== */
+// IMAGE SLIDESHOW (Gallery)
 function initSlideshow() {
     const slideshow = document.querySelector('.slideshow-container');
+    const dotscontainer = document.querySelector('.slideshow-dots');
     
     if (!slideshow) return;
     
     const slides = slideshow.querySelectorAll('.slide');
-    const dots = slideshow.querySelectorAll('.dot');
+    const dots = dotscontainer.querySelectorAll('.dot');
     const prevBtn = slideshow.querySelector('.slideshow-nav.prev');
     const nextBtn = slideshow.querySelector('.slideshow-nav.next');
+    console.log('Dots found:', dots.length);
+    console.log('Slides found:', slides.length);
     
     if (slides.length === 0) return;
     
@@ -152,9 +145,7 @@ function initSlideshow() {
     startSlideshow();
 }
 
-/* ========================================
-   FORM VALIDATION (Contact/Registration)
-   ======================================== */
+// FORM VALIDATION (Contact/Registration)
 function initFormValidation() {
     const form = document.getElementById('contactForm');
     
@@ -162,7 +153,6 @@ function initFormValidation() {
     
     const formGroups = form.querySelectorAll('.form-group');
     const submitBtn = form.querySelector('.form-submit');
-    const successMessage = document.querySelector('.form-success');
     
     // Validation rules
     const validators = {
@@ -280,15 +270,6 @@ function initFormValidation() {
                 submitBtn.textContent = 'Send Message';
                 submitBtn.disabled = false;
                 
-                if (successMessage) {
-                    successMessage.classList.add('show');
-                    
-                    // Hide success message after 5 seconds
-                    setTimeout(function() {
-                        successMessage.classList.remove('show');
-                    }, 5000);
-                }
-                
                 // Show thank you message
                 alert('Thank you for your message! We will get back to you soon.');
             }, 1500);
@@ -302,79 +283,8 @@ function initFormValidation() {
     });
 }
 
-/* ========================================
-   SCROLL ANIMATIONS
-   ======================================== */
-function initScrollAnimations() {
-    // Check if Intersection Observer is supported
-    if (!('IntersectionObserver' in window)) {
-        // Fallback: show all elements
-        document.querySelectorAll('.card, .program-card, .gallery-item').forEach(el => {
-            el.style.opacity = '1';
-            el.style.transform = 'none';
-        });
-        return;
-    }
-    
-    // Create observer
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
-    
-    // Observe elements
-    document.querySelectorAll('.card, .program-card, .gallery-item').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-    
-    // Add animation class styles
-    const style = document.createElement('style');
-    style.textContent = `
-        .animate-in {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-    `;
-    document.head.appendChild(style);
-}
 
-/* ========================================
-   SMOOTH SCROLL FOR ANCHOR LINKS
-   ======================================== */
-function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                e.preventDefault();
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-}
-
-/* ========================================
-   DYNAMIC CONTENT - Program Cards
-   ======================================== */
-// This function can be used to dynamically load program data
+//  DYNAMIC CONTENT - Program Cards
 function loadPrograms() {
     const programs = [
         {
@@ -382,26 +292,26 @@ function loadPrograms() {
             description: 'Comprehensive science curriculum with modern laboratories and technology integration.',
             features: ['Physics, Chemistry, Biology', 'Computer Science', 'Robotics Lab', 'Science Fair'],
             tag: 'Popular',
-            image: 'images/science.jpg'
+            image: '/assets/images/smiles.jpeg'
         },
         {
             title: 'Arts & Humanities',
             description: 'Nurturing creativity and critical thinking through arts and social sciences.',
             features: ['Visual Arts', 'Music & Drama', 'History & Geography', 'Languages'],
             tag: 'Featured',
-            image: 'images/arts.jpg'
+            image: '/assets/images/cultural-dance.jpeg'
         },
         {
             title: 'Business & Commerce',
             description: 'Preparing students for the global business environment with practical skills.',
             features: ['Accounting', 'Economics', 'Business Studies', 'Entrepreneurship'],
             tag: 'New',
-            image: 'images/business.jpg'
+            image: '/assets/images/business.jpg'
         }
     ];
     
     const container = document.getElementById('programsContainer');
-    if (!container) return;
+    if (!container) {console.error('Programs container not found');return;}
     
     programs.forEach((program, index) => {
         const card = document.createElement('div');
@@ -409,8 +319,7 @@ function loadPrograms() {
         card.style.animationDelay = `${index * 0.1}s`;
         
         card.innerHTML = `
-            <img src="${program.image}" alt="${program.title}" class="program-image" 
-                 onerror="this.src='https://via.placeholder.com/400x200?text=${program.title}'">
+            <img src="${program.image}" alt="${program.title}" class="program-image">
             <div class="program-content">
                 <span class="program-tag">${program.tag}</span>
                 <h3>${program.title}</h3>
@@ -425,65 +334,3 @@ function loadPrograms() {
         container.appendChild(card);
     });
 }
-
-/* ========================================
-   GALLERY LIGHTBOX (Optional Enhancement)
-   ======================================== */
-function initGalleryLightbox() {
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    
-    if (galleryItems.length === 0) return;
-    
-    // Create lightbox element
-    const lightbox = document.createElement('div');
-    lightbox.id = 'lightbox';
-    lightbox.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-        cursor: pointer;
-    `;
-    
-    const lightboxImg = document.createElement('img');
-    lightboxImg.style.cssText = `
-        max-width: 90%;
-        max-height: 90%;
-        border-radius: 8px;
-    `;
-    
-    lightbox.appendChild(lightboxImg);
-    document.body.appendChild(lightbox);
-    
-    // Add click events
-    galleryItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const img = this.querySelector('img');
-            if (img) {
-                lightboxImg.src = img.src;
-                lightbox.style.display = 'flex';
-            }
-        });
-    });
-    
-    // Close lightbox
-    lightbox.addEventListener('click', function() {
-        this.style.display = 'none';
-    });
-    
-    // Close on Escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            lightbox.style.display = 'none';
-        }
-    });
-}
-
-// Initialize lightbox if gallery exists
-document.addEventListener('DOMContentLoaded', initGalleryLightbox);
