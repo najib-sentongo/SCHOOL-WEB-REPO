@@ -153,7 +153,6 @@ function initFormValidation() {
     
     const formGroups = form.querySelectorAll('.form-group');
     const submitBtn = form.querySelector('.form-submit');
-    const successMessage = document.querySelector('.form-success');
     
     // Validation rules
     const validators = {
@@ -270,15 +269,6 @@ function initFormValidation() {
                 form.reset();
                 submitBtn.textContent = 'Send Message';
                 submitBtn.disabled = false;
-                
-                if (successMessage) {
-                    successMessage.classList.add('show');
-                    
-                    // Hide success message after 5 seconds
-                    setTimeout(function() {
-                        successMessage.classList.remove('show');
-                    }, 5000);
-                }
                 
                 // Show thank you message
                 alert('Thank you for your message! We will get back to you soon.');
