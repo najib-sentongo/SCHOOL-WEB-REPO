@@ -292,21 +292,21 @@ function loadPrograms() {
             description: 'Comprehensive science curriculum with modern laboratories and technology integration.',
             features: ['Physics, Chemistry, Biology', 'Computer Science', 'Robotics Lab', 'Science Fair'],
             tag: 'Popular',
-            image: '../assets/images/smiles.jpeg'
+            image: './assets/images/smiles.jpeg'
         },
         {
             title: 'Arts & Humanities',
             description: 'Nurturing creativity and critical thinking through arts and social sciences.',
             features: ['Visual Arts', 'Music & Drama', 'History & Geography', 'Languages'],
             tag: 'Featured',
-            image: '../assets/images/cultural-dance.jpeg'
+            image: './assets/images/cultural-dance.jpeg'
         },
         {
             title: 'Business & Commerce',
             description: 'Preparing students for the global business environment with practical skills.',
             features: ['Accounting', 'Economics', 'Business Studies', 'Entrepreneurship'],
             tag: 'New',
-            image: '../assets/images/business.jpg'
+            image: './assets/images/business.jpg'
         }
     ];
     
